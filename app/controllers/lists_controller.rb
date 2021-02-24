@@ -1,5 +1,5 @@
 class ListsController < ApplicationController
-  before_action :set_list, only: [:show, :update, :destroy]
+  before_action :set_list, only: [:show, :update, :destroy, :list_terms]
 
   # GET /lists
   def index
@@ -14,7 +14,6 @@ class ListsController < ApplicationController
   end
 
   def list_terms
-    @list = List.find(params[:id])
     render json: @list.terms
   end
 
