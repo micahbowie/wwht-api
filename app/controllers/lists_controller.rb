@@ -13,6 +13,11 @@ class ListsController < ApplicationController
     render json: @list
   end
 
+  def list_terms
+    @list = List.find(params[:id])
+    render json: @list.terms
+  end
+
   # POST /lists
   def create
     @list = List.new(list_params)
