@@ -6,6 +6,15 @@ class TermsController < ApplicationController
     render json: @terms
   end
 
+  def search_term
+    @terms = Term.search(params[:search])
+    if @terms.empty?
+      render json: "No terms found"
+    else
+      render json: @terms
+    end 
+  end
+
   def show
     render json: @term
   end
@@ -39,5 +48,5 @@ class TermsController < ApplicationController
     def term_params
       params.require(:term).permit(:name, :why, :what, :how, :list_id, :favorites_id)
     end
-    
+
 end
