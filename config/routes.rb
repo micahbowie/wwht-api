@@ -15,4 +15,7 @@ Rails.application.routes.draw do
 
   # Joke
   get "/joke", to: 'joke_api#show'
+
+  # Email verify
+  get "/verify", to: 'everify#verify'
 end
