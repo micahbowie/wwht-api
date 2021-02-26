@@ -1,10 +1,18 @@
 Rails.application.routes.draw do
-  resources :lists
-  resources :users
-  resources :terms
-
+  # Lists
   get "/lists/:id/terms", to: 'lists#list_terms'
+  resources :lists
+
+  # Users
+  resources :users
+
+  # Add new term to list
   post "/listterms", to: 'lists_terms#create'
+
+  # Terms
+  resources :terms
   get "/terms/search/:search", to: 'terms#search_term'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+  # Joke
+  get "/joke", to: 'joke_api#show'
 end
