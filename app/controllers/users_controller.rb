@@ -27,6 +27,17 @@ class UsersController < ApplicationController
     end
   end
 
+  def login
+    @user = User.find_by(email: params[:email])
+    @is_logged_in =  false
+    if @user && @user.authenticate(params[:password])
+      @is_logged_in = true
+      render json: @user && @is_logged_in
+    else
+      render json: @is_logged_in
+    end
+  end
+
   def destroy
     @user.destroy
   end
