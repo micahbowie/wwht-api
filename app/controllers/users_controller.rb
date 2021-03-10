@@ -32,7 +32,7 @@ class UsersController < ApplicationController
     @is_logged_in =  false
     if @user && @user.authenticate(params[:password])
       @is_logged_in = true
-      render json: @user && @is_logged_in
+      render json: @user
     else
       render json: @is_logged_in
     end
