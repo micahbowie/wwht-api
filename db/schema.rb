@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_10_033502) do
+ActiveRecord::Schema.define(version: 2021_03_11_234552) do
+
+  create_table "definitions", force: :cascade do |t|
+    t.text "what"
+    t.text "why"
+    t.text "how"
+    t.integer "up_vote"
+    t.integer "term_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "list_terms", force: :cascade do |t|
     t.integer "list_id"
@@ -28,9 +38,6 @@ ActiveRecord::Schema.define(version: 2021_03_10_033502) do
 
   create_table "terms", force: :cascade do |t|
     t.string "name"
-    t.text "why"
-    t.text "what"
-    t.text "how"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -38,9 +45,9 @@ ActiveRecord::Schema.define(version: 2021_03_10_033502) do
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "email"
+    t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "password_digest"
   end
 
 end
