@@ -12,7 +12,7 @@ class TermsController < ApplicationController
       render json: "No terms found"
     else
       render json: @terms
-    end 
+    end
   end
 
   def show
