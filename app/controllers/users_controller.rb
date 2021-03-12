@@ -29,12 +29,10 @@ class UsersController < ApplicationController
 
   def login
     @user = User.find_by(email: params[:email])
-    @is_logged_in =  false
     if @user && @user.authenticate(params[:password])
-      @is_logged_in = true
-      render json: @user
+      render json: { id: @user.id, name: @user.name, email: @user.email, lists: @user.lists, isLoggedIn: true, errors: @user.errors }
     else
-      render json: @is_logged_in
+      render json: {errors: @user.errors, isLoggedIn: false}
     end
   end
 
