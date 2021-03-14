@@ -46,7 +46,7 @@ class TermsController < ApplicationController
     end
 
     def term_params
-      params.require(:term).permit(:name, :why, :what, :how, :list_id, :favorites_id)
+      params.require(:term).permit(:name, :list_id, :favorites_id)
     end
 
 end
