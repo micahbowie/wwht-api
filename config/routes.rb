@@ -18,4 +18,8 @@ Rails.application.routes.draw do
 
   # Email verify
   get "/verify", to: 'everify#verify'
+
+  #Definition
+  resources :definitions
+  get "/definitions/vote", to: 'definitions#up_vote'
 end
