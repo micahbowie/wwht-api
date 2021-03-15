@@ -21,5 +21,5 @@ Rails.application.routes.draw do
 
   #Definition
   resources :definitions
-  get "/definitions/vote", to: 'definitions#up_vote'
+  get "/definitions/:id/vote", to: 'definitions#up_vote'
 end
