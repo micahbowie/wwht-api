@@ -12,7 +12,6 @@ class DefinitionsController < ApplicationController
 
   def up_vote
     @definition = Definition.find(params[:id])
-    # byebug
     @definition.up_vote = @definition.up_vote + 1
     @definition.save
     render json: @definition
