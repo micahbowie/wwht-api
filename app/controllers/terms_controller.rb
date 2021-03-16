@@ -9,7 +9,7 @@ class TermsController < ApplicationController
   def search_term
     @terms = Term.search(params[:search])
     if @terms.empty?
-      render json: "No terms found"
+      render json:@terms
     else
       render json: @terms
     end
