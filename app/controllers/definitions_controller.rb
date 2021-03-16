@@ -19,6 +19,7 @@ class DefinitionsController < ApplicationController
 
   def create
     @definition = Definition.new(definition_params)
+    @definition.up_vote =  0
     if @definition.save
       render json: @definition, status: :created, location: @definition
     else
