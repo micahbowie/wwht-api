@@ -13,4 +13,5 @@ class Term < ApplicationRecord
    end
  end
 
+ default_scope { order('id ASC') }
 end
