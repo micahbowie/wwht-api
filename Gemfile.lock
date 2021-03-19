@@ -98,8 +98,9 @@ GEM
     msgpack (1.4.2)
     multi_xml (0.6.0)
     nio4r (2.5.7)
-    nokogiri (1.11.1-x64-mingw32)
+    nokogiri (1.11.2-x64-mingw32)
       racc (~> 1.4)
+    pg (1.2.3-x64-mingw32)
     puma (4.3.7)
       nio4r (~> 2.0)
     racc (1.5.2)
@@ -142,7 +143,6 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
-    sqlite3 (1.4.2)
     thor (1.1.0)
     thread_safe (0.3.6)
     tzinfo (1.2.9)
@@ -164,10 +164,10 @@ DEPENDENCIES
   byebug
   httparty (~> 0.18.1)
   jbuilder (~> 2.7)
+  pg
   puma (~> 4.1)
   rack-cors
   rails (~> 6.0.3, >= 6.0.3.4)
-  sqlite3 (~> 1.4)
   tzinfo-data
 
 RUBY VERSION
