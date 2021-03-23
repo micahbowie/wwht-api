@@ -1,4 +1,4 @@
-class ListTermsController < ApplicationController
+class Api::V1::ListTermsController < ApplicationController
 
   def create
     @list_term = List.new(list_terms_params)

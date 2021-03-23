@@ -1,4 +1,4 @@
-class DefinitionsController < ApplicationController
+class Api::V1::DefinitionsController < ApplicationController
   before_action :set_definition, only: [:show, :update, :destroy]
 
   def index

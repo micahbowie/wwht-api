@@ -1,4 +1,4 @@
-class TermsController < ApplicationController
+class Api::V1::TermsController < ApplicationController
   before_action :set_term, only: [:show, :update, :destroy]
 
   def index

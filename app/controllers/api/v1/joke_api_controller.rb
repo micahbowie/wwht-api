@@ -1,4 +1,4 @@
-class JokeApiController < ApplicationController
+class Api::V1::JokeApiController < ApplicationController
 
 
   def show

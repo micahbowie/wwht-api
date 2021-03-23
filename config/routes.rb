@@ -1,25 +1,29 @@
 Rails.application.routes.draw do
-      # Lists
-      get "/lists/:id/terms", to: 'lists#list_terms'
-      resources :lists
+  namespace :api do
+   namespace :v1 do
+     # Lists
+    get "/lists/:id/terms", to: 'lists#list_terms'
+    resources :lists
 
-      # Users
-      resources :users
-      post "/login", to: 'users#login'
-      # Add new term to list
-      post "/listterms", to: 'lists_terms#create'
+    # Users
+    resources :users
+    post "/login", to: 'users#login'
+    # Add new term to list
+    post "/listterms", to: 'lists_terms#create'
 
-      # Terms
-      resources :terms
-      get "/terms/search/:search", to: 'terms#search_term'
+    # Terms
+    resources :terms
+    get "/terms/search/:search", to: 'terms#search_term'
 
-      # Joke
-      get "/joke", to: 'joke_api#show'
+    # Joke
+    get "/joke", to: 'joke_api#show'
 
-      # Email verify
-      get "/verify", to: 'everify#verify'
+    # Email verify
+    get "/verify", to: 'everify#verify'
 
-      #Definition
-      resources :definitions
-      get "/definitions/:id/vote", to: 'definitions#up_vote'
+    #Definition
+    resources :definitions
+    get "/definitions/:id/vote", to: 'definitions#up_vote'
+    end
+  end
 end
