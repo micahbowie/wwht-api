@@ -2,8 +2,8 @@
 
 one:
   list_id: 1
-  term_id: 1
+  definition_id: 1
 
 two:
   list_id: 1
-  term_id: 1
+  definition_id: 1
