@@ -45,6 +45,6 @@ class Api::V1::DefinitionsController < ApplicationController
     end
 
     def definition_params
-      params.require(:definition).permit(:why, :what, :how, :term_id, :up_vote)
+      params.require(:definition).permit(:why, :what, :how, :term_id, :up_vote, images: [])
     end
 end
