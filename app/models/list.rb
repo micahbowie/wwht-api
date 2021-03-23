@@ -1,5 +1,5 @@
 class List < ApplicationRecord
-  has_many:list_definitions
+  has_many :list_definitions
   has_many :definitions, through: :list_definitions
   belongs_to :user
 
