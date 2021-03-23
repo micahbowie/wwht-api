@@ -14,10 +14,12 @@ Rails.application.routes.draw do
     # Terms
     resources :terms
     get "/terms/search/:search", to: 'terms#search_term'
-    
+
     #Definition
     resources :definitions
     get "/definitions/:id/vote", to: 'definitions#up_vote'
+
+    resources :list_definitions
     end
   end
 end
