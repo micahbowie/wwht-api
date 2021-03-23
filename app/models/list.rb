@@ -1,6 +1,6 @@
 class List < ApplicationRecord
-  has_many:list_terms
-  has_many :terms, through: :list_terms
+  has_many:list_definitions
+  has_many :definitions, through: :list_definitions
   belongs_to :user
 
   validates :user_id, presence: true
