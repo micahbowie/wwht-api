@@ -14,13 +14,7 @@ Rails.application.routes.draw do
     # Terms
     resources :terms
     get "/terms/search/:search", to: 'terms#search_term'
-
-    # Joke
-    get "/joke", to: 'joke_api#show'
-
-    # Email verify
-    get "/verify", to: 'everify#verify'
-
+    
     #Definition
     resources :definitions
     get "/definitions/:id/vote", to: 'definitions#up_vote'
