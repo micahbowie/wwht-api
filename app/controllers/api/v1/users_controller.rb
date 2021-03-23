@@ -1,5 +1,6 @@
 class Api::V1::UsersController < ApplicationController
   before_action :set_user, only: [:show, :update, :destroy]
+  # skip_before_action :authorized, only: [:create]
 
   def index
     @users = User.all
@@ -9,6 +10,17 @@ class Api::V1::UsersController < ApplicationController
   def show
     render json: @user
   end
+
+# Create action for JWT
+  # def create
+  #   @user = User.create(user_params)
+  #   if @user.valid?
+  #     @token = encode_token(user_id: @user.id)
+  #     render json:{user: @user, jwt: @token}, status: :created
+  #   else
+  #     render json: { error: "Failed to create new user"}, status: :not_acceptable
+  #   end
+  # end
 
   def create
     @user = User.new(user_params)
@@ -46,6 +58,6 @@ class Api::V1::UsersController < ApplicationController
     end
 
     def user_params
-      params.require(:user).permit(:name, :email)
+      params.require(:user).permit(:username, :email, :first_name, :last_name, :twitter, :password)
     end
 end
