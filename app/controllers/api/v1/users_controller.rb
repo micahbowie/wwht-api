@@ -24,8 +24,9 @@ class Api::V1::UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+    @user.password = params[:password]
     if @user.save
-      render json: @user, status: :created, location: @user
+      render json: @user, status: :created, location: api_v1_url(@user)
     else
       render json: @user.errors, status: :unprocessable_entity
     end
@@ -58,6 +59,6 @@ class Api::V1::UsersController < ApplicationController
     end
 
     def user_params
-      params.require(:user).permit(:username, :email, :first_name, :last_name, :twitter, :password)
+      params.require(:user).permit(:username, :email, :first_name, :last_name, :twitter)
     end
 end

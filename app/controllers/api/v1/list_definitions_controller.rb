@@ -12,7 +12,7 @@ class Api::V1::ListDefinitionsController < ApplicationController
     @list_definition = ListDefinition.new(list_definition_params)
 
     if @list_definition.save
-      render :show, status: :created, location: @list_definition
+      render :show, status: :created, location:api_v1_url(@list_definition) 
     else
       render json: @list_definition.errors, status: :unprocessable_entity
     end

@@ -22,7 +22,7 @@ class Api::V1::TermsController < ApplicationController
   def create
     @term = Term.new(term_params)
     if @term.save
-      render json: @term, status: :created, location: @term
+      render json: @term, status: :created, location: api_v1_url(@term)
     else
       render json: @term.errors, status: :unprocessable_entity
     end

@@ -21,7 +21,7 @@ class Api::V1::DefinitionsController < ApplicationController
     @definition = Definition.new(definition_params)
     @definition.up_vote =  0
     if @definition.save
-      render json: @definition, status: :created, location: @definition
+      render json: @definition, status: :created, location: api_v1_url(@definition) 
     else
       render json: @definition.errors, status: :unprocessable_entity
     end
