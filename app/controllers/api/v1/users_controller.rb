@@ -41,9 +41,9 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def login
-    @user = User.find_by(email: params[:email])
+    @user = User.find_by(username: params[:username])
     if @user && @user.authenticate(params[:password])
-      render json: { id: @user.id, name: @user.name, email: @user.email, lists: @user.lists, isLoggedIn: true, errors: @user.errors }
+      render json: @user
     else
       render json: {errors: @user.errors, isLoggedIn: false}
     end
