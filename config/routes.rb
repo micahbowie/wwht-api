@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
     # Users
     resources :users
-    post "/login", to: 'users#login'
+    post "/login", to: 'auth#login'
     # Add new term to list
     post "/listterms", to: 'lists_terms#create'
 
