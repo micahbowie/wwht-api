@@ -32,6 +32,11 @@ gem 'active_model_serializers', '~> 0.10.2'
 #User authentication and token creation
 gem 'jwt'
 
+
+gem 'json'
+
+gem 'awesome_print'
+
 #create secure env files
 gem 'dotenv-rails'
 
