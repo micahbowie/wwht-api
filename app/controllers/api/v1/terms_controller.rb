@@ -1,8 +1,9 @@
+require 'json'
 class Api::V1::TermsController < ApplicationController
   before_action :set_term, only: [:show, :update, :destroy]
 
   def index
-    @terms = Term.all
+    @terms = Term.all.reorder(:name)
     render json: @terms
   end
 
