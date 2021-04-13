@@ -5,7 +5,7 @@ class Term < ApplicationRecord
 
   def self.search(search_term)
    if search_term
-     where(["name LIKE ?", "%#{search_term}%"])
+     where(["lower(name) LIKE ?", "%#{search_term.downcase}%"])
    else
      all
    end
