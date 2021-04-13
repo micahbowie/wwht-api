@@ -12,8 +12,8 @@ Rails.application.routes.draw do
     post "/listterms", to: 'lists_terms#create'
 
     # Terms
+    post "/terms/search", to: 'terms#search_term'
     resources :terms
-    get "/terms/search/:search", to: 'terms#search_term'
 
     #Definition
     resources :definitions
